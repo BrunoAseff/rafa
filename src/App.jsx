@@ -1,5 +1,6 @@
-import { useState } from "react";
 import { HashRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { IoIosMenu } from "react-icons/io";
 import "./App.css";
 
 function Page() {
@@ -19,57 +20,55 @@ function AparelhosAuditivos() {
 }
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const navRef = useRef(null);
+
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+
+  // Close sidebar if clicking outside of the nav
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [navRef]);
 
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <p>Hello Vite + React!</p>
-          <p>
-            <button
-              type="button"
-              onClick={() => setCount((count) => count + 1)}
-            >
-              count is: {count}
-            </button>
-          </p>
-          <p>
-            Edit <code>App.jsx</code> and save to test HMR updates.
-          </p>
-          <p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-            {" | "}
-            <a
-              className="App-link"
-              href="https://vitejs.dev/guide/features.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Vite Docs
-            </a>
-          </p>
-        </header>
-        <nav>
-          <ul>
+        <nav ref={navRef}>
+          <div className="menu-icon" onClick={toggleSidebar}>
+            <IoIosMenu color="#e63946" />
+          </div>
+          <ul className={sidebarOpen ? "active" : ""}>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={() => setSidebarOpen(false)}>
+                Inicio
+              </Link>
             </li>
             <li>
-              <Link to="/sobre-mim">Sobre mim</Link>
+              <Link to="/sobre-mim" onClick={() => setSidebarOpen(false)}>
+                Sobre mim
+              </Link>
             </li>
             <li>
-              <Link to="/exames">Exames</Link>
+              <Link to="/exames" onClick={() => setSidebarOpen(false)}>
+                Exames
+              </Link>
             </li>
             <li>
-              <Link to="/aparelhos-auditivos">Aparelhos Auditivos</Link>
+              <Link
+                to="/aparelhos-auditivos"
+                onClick={() => setSidebarOpen(false)}
+              >
+                Aparelhos Auditivos
+              </Link>
             </li>
           </ul>
         </nav>
