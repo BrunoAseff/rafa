@@ -1,86 +1,34 @@
-import { HashRouter as Router, Route, Routes, Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
-import { IoIosMenu } from "react-icons/io";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import Nav from "./Nav";
 import "./App.css";
 
 function Page() {
-  return <h1>Inicio</h1>;
+  return <h1>Início</h1>;
 }
 
-function SobreMim() {
-  return <h1>Sobre mim</h1>;
+function Item1() {
+  return <h1>Item 1</h1>;
 }
 
-function Exames() {
-  return <h1>Exames</h1>;
+function Item2() {
+  return <h1>Item 2</h1>;
 }
 
-function AparelhosAuditivos() {
-  return <h1>Aparelhos Auditivos</h1>;
+function Item3() {
+  return <h1>Item 3</h1>;
 }
 
 function App() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const navRef = useRef(null);
-
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
-
-  // Close sidebar if clicking outside of the nav
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
-        setSidebarOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [navRef]);
-
   return (
     <Router>
       <div className="App">
-        <nav ref={navRef}>
-          <div className="menu-icon" onClick={toggleSidebar}>
-            <IoIosMenu color="#e63946" />
-          </div>
-          <ul className={sidebarOpen ? "active" : ""}>
-            <li>
-              <Link to="/" onClick={() => setSidebarOpen(false)}>
-                Inicio
-              </Link>
-            </li>
-            <li>
-              <Link to="/sobre-mim" onClick={() => setSidebarOpen(false)}>
-                Sobre mim
-              </Link>
-            </li>
-            <li>
-              <Link to="/exames" onClick={() => setSidebarOpen(false)}>
-                Exames
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/aparelhos-auditivos"
-                onClick={() => setSidebarOpen(false)}
-              >
-                Aparelhos Auditivos
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <Nav />
         <main>
           <Routes>
             <Route path="/" element={<Page />} />
-            <Route path="/sobre-mim" element={<SobreMim />} />
-            <Route path="/exames" element={<Exames />} />
-            <Route
-              path="/aparelhos-auditivos"
-              element={<AparelhosAuditivos />}
-            />
+            <Route path="/item1" element={<Item1 />} />
+            <Route path="/item2" element={<Item2 />} />
+            <Route path="/item3" element={<Item3 />} />
           </Routes>
         </main>
       </div>
