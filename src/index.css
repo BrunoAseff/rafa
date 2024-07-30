@@ -1,4 +1,12 @@
 :root {
+  --gray-100: #efefec;
+  --gray-300: #f0f3f5;
+  --gray-600: #9eb5c1;
+  --gray-900: #728d9a;
+
+  --black: #242424;
+  --white: #ffffff;
+
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
 
@@ -15,7 +23,11 @@ body {
 }
 
 html {
-  background-image: linear-gradient(to bottom, #ffecd2 0%, #fcb69f 100%);
+  background-image: linear-gradient(
+    to bottom,
+    var(--gray-300) 0%,
+    var(--gray-600) 100%
+  );
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

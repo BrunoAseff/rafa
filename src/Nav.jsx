@@ -40,9 +40,6 @@ export default function Nav() {
         <div className={styles.center}>
           <ul>
             <li>
-              <Link to="#">Inicio</Link>
-            </li>
-            <li>
               <Link to="#sobre-mim">Sobre mim</Link>
             </li>
             <li
@@ -50,7 +47,7 @@ export default function Nav() {
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
-              <Link to="#depoimentos">Procedimentos</Link>
+              <Link to="#depoimentos">Exames pediatria</Link>
               <FaAngleDown className={styles.arrow} />
               {isDropdownOpen && (
                 <div className={styles.dropdown}>
@@ -60,11 +57,9 @@ export default function Nav() {
                 </div>
               )}
             </li>
+
             <li>
-              <Link to="#contato">Contato</Link>
-            </li>
-            <li>
-              <Link to="#duvidas">Dúvidas</Link>
+              <Link to="#duvidas">Depoimentos</Link>
             </li>
           </ul>
         </div>
@@ -115,8 +110,8 @@ export default function Nav() {
 function Logo() {
   return (
     <div className={styles.logo}>
-      <Ear size={32} color="#480f0f" weight="duotone" />
-      <span>Rafaela Duarte Alves</span>
+      <Ear size={28} color="#242424" weight="thin" />
+      <span>Fonoaudióloga Rafaela Duarte Alves</span>
     </div>
   );
 }

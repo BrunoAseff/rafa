@@ -1,9 +1,17 @@
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Nav from "./Nav";
+import Hero from "./Hero";
 import "./App.css";
+import ExamesPediatria from "./ExamesPediatria";
 
 function Page() {
-  return <h1>Início</h1>;
+  return (
+    <>
+      {" "}
+      <Hero />
+      <ExamesPediatria />
+    </>
+  );
 }
 
 function Item1() {

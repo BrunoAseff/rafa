@@ -1,17 +1,21 @@
 :root {
-  --text-color: #480f0f;
-  --hover-color: #fea793;
-  --card-color: #ffecd2;
+  --gray-100: #efefec;
+  --gray-300: #f0f3f5;
+  --gray-600: #9eb5c1;
+  --gray-900: #728d9a;
+
+  --black: #242424;
+  --white: #ffffff;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--black);
   padding: 1rem 3rem;
-  color: var(--text-color);
-  background: white;
+  color: var(--black);
+  background: var(--gray-100);
   font-weight: 500;
 
   @media (max-width: 768px) {
@@ -30,13 +34,13 @@
 
 a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--black);
 }
 
 button {
-  background: black;
-  border: 2px solid black;
-  color: white;
+  background: var(--gray-100);
+  border: 1px solid var(--black);
+  color: var(--black);
   padding: 1rem 1.3rem;
   border-radius: 10px;
   font-family: "Inter", sans-serif;
@@ -47,24 +51,9 @@ button {
 
 button:hover {
   cursor: pointer;
+  background: var(--gray-300);
 }
 
-/**  button {
-  background: #ffecd2;
-  border: 2px solid black;
-  color: var(--text-color);
-  padding: 1rem 1.3rem;
-  border-radius: 20px;
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-
-button:hover {
-  cursor: pointer;
-}
-*/
 .depoimentos {
   position: relative;
   display: flex;
@@ -83,16 +72,17 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background: white;
+    background: var(--gray-100);
     border-bottom: 1px solid black;
   }
 }
 
 .logo {
-  font-size: 1.2rem;
+  font-family: Bona Nova SC, serif;
+  font-weight: 300;
+  font-size: 1.3rem;
+  color: var(--black);
   display: flex;
-  font-weight: 600;
-  gap: 0.5rem;
   line-height: 2rem;
 
   @media (max-width: 768px) {
@@ -149,7 +139,7 @@ button:hover {
   top: 100%;
   left: 0;
   background: white;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--black);
   border-radius: 10px;
   padding: 0.5rem 0.2rem;
   display: flex;
@@ -161,7 +151,7 @@ button:hover {
 .dropdown button {
   background: white;
   border: none;
-  color: var(--text-color);
+  color: var(--black);
   padding: 0.5rem 1rem;
   text-align: left;
   cursor: pointer;
@@ -169,9 +159,11 @@ button:hover {
 }
 
 .dropdown button:hover {
-  background: var(--card-color);
+  background: var(--gray-900);
+  color: var(--white);
 }
 
 .arrow {
   cursor: pointer;
+  margin-top: 0.3rem;
 }
