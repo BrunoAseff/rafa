@@ -1,4 +1,5 @@
 import styles from "./hero.module.css";
+import hero from "./assets/hero.jpeg";
 
 export default function Hero() {
   return (
@@ -11,8 +12,12 @@ export default function Hero() {
         </p>
       </section>
 
-      <section>
-        <p>ALGUMA IMAGEM AQUI</p>
+      <section className={styles.imageSection}>
+        <img
+          className={styles.image}
+          src={hero}
+          alt="Imagem Rafaela com Bebê"
+        />
       </section>
     </main>
   );

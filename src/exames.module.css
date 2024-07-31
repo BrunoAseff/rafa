@@ -12,6 +12,22 @@
   font-weight: 500;
 }
 
+.titleHeader {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 100px 0 10px 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px 7px var(--gray-100);
+
+  @media (max-width: 768px) {
+    width: 300px;
+    max-width: 80%;
+  }
+}
+
 .way {
   display: flex;
   justify-content: center;
@@ -38,6 +54,11 @@
   align-items: center;
 
   gap: 4rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
 }
 
 .modal {
@@ -50,6 +71,9 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 20px 7px var(--gray-100);
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
 }
 
 .title {
@@ -57,6 +81,10 @@
   font-family: Manrope, sans-serif;
   font-weight: 900;
   margin-bottom: 50px;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 }
 
 .orelha {
@@ -89,6 +117,7 @@
   min-height: 5rem;
   text-align: center;
   align-items: center;
+  padding: 10px;
   box-shadow: 0 10px 20px 7px var(--gray-900);
 
   @media (max-width: 768px) {
@@ -97,4 +126,12 @@
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
   }
+}
+
+.orelhaText p {
+  color: var(--black);
+}
+
+.pHeader {
+  text-align: left;
 }

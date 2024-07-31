@@ -51,9 +51,9 @@ export default function Nav() {
               <FaAngleDown className={styles.arrow} />
               {isDropdownOpen && (
                 <div className={styles.dropdown}>
-                  <button>Item 1</button>
-                  <button>Item 2</button>
-                  <button>Item 3</button>
+                  <button>Audiometria Infantil</button>
+                  <button>Imitância Acústica</button>
+                  <button>BERA / PEATE Pediátrico</button>
                 </div>
               )}
             </li>
@@ -87,18 +87,13 @@ export default function Nav() {
           <li>
             <div className={styles.depoimentos}>
               <Link to="#depoimentos" onClick={() => setIsSidebarOpen(false)}>
-                Procedimentos
+                Exames pediatria
               </Link>
             </div>
           </li>
           <li>
             <Link to="#contato" onClick={() => setIsSidebarOpen(false)}>
-              Contato
-            </Link>
-          </li>
-          <li>
-            <Link to="#duvidas" onClick={() => setIsSidebarOpen(false)}>
-              Dúvidas
+              Depoimentos
             </Link>
           </li>
         </ul>
