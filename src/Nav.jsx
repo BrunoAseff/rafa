@@ -64,7 +64,7 @@ export default function Nav() {
           </ul>
         </div>
         <div>
-          <button>Agendar consulta</button>
+          <button className={styles.navButton}>ENTRAR EM CONTATO</button>
         </div>
       </nav>
 

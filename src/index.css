@@ -28,6 +28,7 @@ html {
     var(--gray-300) 0%,
     var(--gray-600) 100%
   );
+  background: var(--gray-100);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

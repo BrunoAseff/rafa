@@ -1,16 +1,36 @@
 import Modal from "./components/Modal";
 import styles from "./exames.module.css";
+import orelha from "./assets/orelha.jpg";
+
 export default function ExamesPediatria() {
   return (
     <div className={styles.container}>
-      <h1>Audiometria Infantil</h1>
+      <div className={styles.header}>
+        <h1 className={styles.title}>Exames pediatria</h1>
+        <p>
+          Na audiologia pediátrica, tenho a chance de cuidar tanto das crianças
+          quanto de seus pais, oferecendo apoio com relação às expectativas,
+          ansiedades e preocupações sobre a audição. Quero contribuir para que
+          seus filhos se desenvolvam de maneira saudável e segura, cercados de
+          atenção, para que possam atingir todo o seu potencial, desde o
+          nascimento, as primeiras palavras e a cada idade em que for
+          necessário.
+        </p>
+        <div className={styles.way}>
+          <div className={styles.circle}></div>
+          <div className={styles.line}></div>
+        </div>
+      </div>
+      <h1 className={styles.title}>Audiometria Infantil</h1>
 
-      <div className={styles.infantil}>
+      <div className={styles.exames}>
         <div className={styles.modal}>
           <p>Audiometria com Reforço Visual (VRA)</p>
 
           <Modal triggerText="Saiba mais">
-            <h1>Audiometria com Reforço Visual (VRA)</h1>
+            <h1 className={styles.title}>
+              Audiometria com Reforço Visual (VRA)
+            </h1>
             Audiometria com Reforço Visual (VRA) <br />
             Exame no qual a localização de estímulos sonoros será associada a
             apresentação de estímulos luminosos.
@@ -28,13 +48,17 @@ export default function ExamesPediatria() {
           </Modal>
         </div>
       </div>
-      <h1>Imitância Acústica</h1>
+      <div className={styles.orelha}>
+        <div className={styles.orelhaText}>
+          <h1 className={styles.title}>Imitância Acústica</h1>
+          <p>Avaliação das condições da orelha média.</p>
+        </div>
 
-      <p>Avaliação das condições da orelha média.</p>
+        <img className={styles.orelhaImg} src={orelha} alt="imagem orelha" />
+      </div>
+      <h1 className={styles.title}>BERA / PEATE Pediátrico</h1>
 
-      <h1>BERA / PEATE Pediátrico</h1>
-
-      <div className={styles.infantil}>
+      <div className={styles.exames}>
         <div className={styles.modal}>
           <p>BERA / PEATE Pediátrico</p>
 

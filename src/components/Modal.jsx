@@ -27,7 +27,7 @@ export default function Modal({ triggerText, children }) {
         <div className={styles.overlay} onClick={handleOverlayClick}>
           <div className={styles.modal} ref={modalRef}>
             <button className={styles.closeButton} onClick={closeModal}>
-              <X size={15} />
+              <X className={styles.button} size={15} />
             </button>
             <div className={styles.content}>{children}</div>
           </div>

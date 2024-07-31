@@ -6,8 +6,8 @@ export default function Hero() {
       <section className={styles.heroText}>
         <p>
           A audição é a porta de entrada para o mundo; cuidar dela é garantir
-          que cada som, cada palavra e cada emoção possam ser plenamente
-          vividos.
+          que cada som, cada <strong>palavra</strong> e cada{" "}
+          <strong>emoção</strong> possam ser plenamente vividos.
         </p>
       </section>
 
